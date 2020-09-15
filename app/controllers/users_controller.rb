@@ -28,16 +28,17 @@ class UsersController < ApplicationController
           user = User.find_by(username: params[:username])
           if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            # binding.pry
-            redirect '/show'
+            binding.pry
+            
+            erb :show
           else
             redirect '/login'
           end
         else
-            "Plese try again"
+            "Please try again"
           redirect '/login'
         end
-      end
+    end
 
 
 

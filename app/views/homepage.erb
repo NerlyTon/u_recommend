@@ -3,7 +3,7 @@
 <ul>
 <%@programs.each do |program|%>
     <li><h5><%="Title: #{program.title}"%></h5></li>
-    <li><%="Movie or Show: #{program.movie_or_show}"%></li>
+    <li><%="#{program.movie_or_show}"%></li>
     <li><%=program.summary%></li>
     <li><%=program.streaming_service%></li><br>
     <%end%>
