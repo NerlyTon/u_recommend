@@ -2,11 +2,11 @@ class UsersController < ApplicationController
 
     #shows the login form
     get "/login" do
-        erb :login
+        erb :"/users/login"
     end
 
     get "/signup" do
-        erb :signup
+        erb :"/users/signup"
     end
 
     post '/signup' do

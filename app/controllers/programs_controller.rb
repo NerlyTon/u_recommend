@@ -3,18 +3,18 @@ class ProgramsController < ApplicationController
 
     get '/programs' do
         @programs = current_user.programs
-        erb :show 
+        erb :"/programs/show" 
     end
     
     get '/programs/new' do
-        erb :new
+        erb :"/programs/new"
     end
     
     get '/programs/:id' do
         @program = Program.find_by_id(params[:id])
         if current_user && @program.user_id == current_user.id
             
-            erb :show_id
+            erb :"/programs/show_id"
         else
             redirect '/'
         end
@@ -23,7 +23,7 @@ class ProgramsController < ApplicationController
     
     get '/programs/:id/edit' do
         @program = Program.find_by(id:params[:id])
-        erb :edit
+        erb :"/programs/edit"
     end
 #receive params from the new program form
     post '/programs' do
