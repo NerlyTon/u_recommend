@@ -1,7 +1,9 @@
 <h1>Here are your current recommendations</h1>
-<p><%=@program.title%></p>
-<p><%=@program.movie_or_show%></p>
-<p><%=@program.summary%></p>
-<p><%=@program.streaming_service%></p>
+<%@programs.each do |program|%>
+<p><%="#{program.title}"%> </p>
+<p><%=program.movie_or_show%>< /p>
+<p><%=program.summary%> </p>
+<p><%=program.streaming_service%> </p>
 <br>
+<%end%>
 

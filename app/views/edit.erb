@@ -1,0 +1,7 @@
+<h1>Edit Program</h1>
+<form method="post" action="/program/<%=@program.id%>/edit">
+<input id="hidden" type="hidden" name="_method" value="patch">
+Title:<input type="text" value="<%=@program.title%>" name="title"><br>
+Movie or Show:<input type="text" value="<%=@program.movie_or_show%>" name="movie_or_show"><br>
+<input type="submit" value="submit">
+</form>
