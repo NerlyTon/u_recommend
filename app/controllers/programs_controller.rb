@@ -11,8 +11,9 @@ class ProgramsController < ApplicationController
     end
     
     get '/programs/:id' do
-        if session[:user_id]
-            @program = Program.find_by_id(params[:id])
+        @program = Program.find_by_id(params[:id])
+        if current_user && @program.user_id == current_user.id
+            
             erb :show_id
         else
             redirect '/'
@@ -30,8 +31,11 @@ class ProgramsController < ApplicationController
         redirect '/programs'
     end
 
-    patch 'programs/:id' do
+    patch '/programs/:id' do
+        # binding.pry
         @program = Program.find_by_id(params[:id])
+        if current_user.id == @program.user_id
+            
         @program.title = params[:title]
         @program.movie_or_show = params[:movie_or_show]
         @program.summary = params[:summary]
@@ -42,8 +46,11 @@ class ProgramsController < ApplicationController
         #     program.update(params[:title])
           
           redirect "/programs/#{@program.id}"
+        else
+            redirect "/programs/#{@program.id}"
         end
     end
+end
     
         # erb :show
 

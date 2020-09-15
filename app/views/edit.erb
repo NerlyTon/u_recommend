@@ -1,5 +1,5 @@
 <h1>Edit Program</h1>
-<form method="patch" action="/programs/<%=@program.id%>">
+<form method="post" action="/programs/<%=@program.id%>">
 <input id="hidden" type="hidden" name="_method" value="patch">
 Title:<input type="text" value="<%=@program.title%>" name="title"><br><br>
 Movie or Show:<input type="text" value="<%=@program.movie_or_show%>" name="movie_or_show"><br><br>
