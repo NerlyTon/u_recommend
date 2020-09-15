@@ -25,9 +25,9 @@ class ProgramsController < ApplicationController
         @program = Program.find_by(id:params[:id])
         erb :edit
     end
-
-    post '/programs/new' do
-        @program = Program.create(params)
+#receive params from the new program form
+    post '/programs' do
+        program = Program.create(title: params[:title], movie_or_show: params[:movie_or_show], summary: params[:summary], streaming_service: params[:streaming_service], user_id: current_user.id)
         redirect '/programs'
     end
 
@@ -50,9 +50,17 @@ class ProgramsController < ApplicationController
             redirect "/programs/#{@program.id}"
         end
     end
+
+    delete '/programs/:id' do
+        @program = Program.find(params[:id])
+        @program.destroy
+        redirect '/programs'
+    end
+
+
 end
     
-        # erb :show
+        
 
 
 
