@@ -1,0 +1,11 @@
+<h1>Welcome to URecommend</h1>
+<h3>A place to see peoples Movie/Show recommendations as well as your own!</h3><br><br>
+<ul>
+<%@programs.each do |program|%>
+    <li><h5><%="Title: #{program.title}"%></h5></li>
+    <li><%="Movie or Show: #{program.movie_or_show}"%></li>
+    <li><%=program.summary%></li>
+    <li><%=program.streaming_service%></li><br>
+    <%end%>
+</ul>
+<a href="/login">log in</a> or <a href="/signup">sign up</a> to begin making your list</h3>
