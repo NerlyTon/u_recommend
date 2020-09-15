@@ -21,12 +21,8 @@ class ProgramsController < ApplicationController
 
     
     get '/programs/:id/edit' do
-        
-            program = Program.find(params[:id])
-            program.update(content: params[:content])
-          end
-          erb :edit
-        end
+        @program = Program.find_by(id:params[:id])
+        erb :edit
     end
 
     post '/programs/new' do
@@ -41,9 +37,17 @@ class ProgramsController < ApplicationController
         @program.summary = params[:summary]
         @program.streaming_service = params[:streaming_service]
         @program.save
-    
-        erb :show
+        # program = Program.find_by(id:params[:id])
+        # if current_user.id = program.user_id
+        #     program.update(params[:title])
+          
+          redirect "/programs/#{@program.id}"
+        end
     end
+    
+        # erb :show
+
+
 
 
 
