@@ -5,5 +5,14 @@
 <p><%=program.summary%> </p>
 <p><%=program.streaming_service%> </p>
 <br>
+<form method="get" action="/programs/<%=program.id%>/edit">
+<input type="submit" value="edit"> 
+</form> <br>
+<form method="post" action="/programs/<%=program.id%>">
+<input type="hidden" name="_method" value="delete">
+<input type="submit" value="delete">
+</form>
+
+
 <%end%>
 
