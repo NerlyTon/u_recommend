@@ -11,12 +11,13 @@ class UsersController < ApplicationController
 
     post '/signup' do
         if !params[:username].empty? && !params[:password].empty? && !params[:name].empty?
-            user = User.create(username: params[:username], password: params[:password], name: params[:name])
-            if user
+            user = User.new(username: params[:username], password: params[:password], name: params[:name])
+            if user.save
               session[:user_id] = user.id
               redirect '/'
             else
-              redirect '/signup'
+              @error = user.errors.full_messages
+              erb :'/users/signup'
             end
         else
             redirect '/signup'
@@ -29,9 +30,10 @@ class UsersController < ApplicationController
           if user && user.authenticate(params[:password])
             session[:user_id] = user.id
             # binding.pry
+            flash[:message] = "Welcome back #{user.name}"
             redirect '/'
           else
-            puts "Please try again"
+            
             redirect '/login'
           end
         else

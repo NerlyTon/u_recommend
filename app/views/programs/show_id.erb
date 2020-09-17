@@ -5,12 +5,14 @@
 
 <form method="get" action="/programs/<%=@program.id%>/edit">
 <input type="submit" value="edit"> 
-</form> <br><br><br>
+</form> <br>
 
 <form method="post" action="/programs/<%=@program.id%>">
 <input type="hidden" name="_method" value="delete">
 <input type="submit" value="delete">
-</form>
+</form><br><br><br>
+
+<li><a href="/programs">Back</a></li>
 
 
 

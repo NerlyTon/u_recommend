@@ -1,10 +1,25 @@
 <h1>Sign up Below!</h1><br>
+<% if @error %>
+<% @error.each do |e| %>
+  <p> <%= e %> </p>
+  <% end %>
+  <% end %>
 <form class="signup" action="/signup" method="post">
   <label for="name">Name:</label>
-  <input type="text" name="name" id="name"><br><br>
+  <input type="text" name="name" id="name" placeholder="Name" required><br><br>
   <label for="username">Username:</label>
-  <input type="text" name="username" id="username"><br><br>
+  <input type="text" name="username" id="username" placeholder="Username" required><br><br>
   <label for="password">Password:</label>
-  <input type="password" name="password" id="password"><br><br>
+  <input type="password" name="password" id="password" placeholder="Password" required><br><br>
   <input type="submit" value="Create Account">
 </form>
+
+<li><a href="/">Back</a></li>
+
+<style>
+    p {
+        color: red;
+      
+    }
+
+</style>

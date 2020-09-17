@@ -1,4 +1,8 @@
-<h1>Welcome to URecommend</h1>
+<% if flash[:message] %>
+<h6><%= flash[:message] %></h6>
+<% end %>
+
+<h1>URecommend</h1>
 <h3>A place to see peoples Movie/Show recommendations as well as your own!</h3><br><br>
 <ul>
 <%@programs.each do |program|%>
@@ -13,11 +17,17 @@
         color: Light Blue;
         font-family: DejaVu Sans Mono, monospace;
         text-align: center;
+        font-size: 10;
     }
 
     h3 {
         font-family: DejaVu Sans Mono, monospace;
         text-align: center;
     }
+
+    h6 {
+        text-align: center;
+    }
+
 </style>
 </ul>
