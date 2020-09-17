@@ -6,10 +6,11 @@
 <h3>A place to see peoples Movie/Show recommendations as well as your own!</h3><br><br>
 <ul>
 <%@programs.each do |program|%>
-    <li><h5><%="Title: #{program.title}"%></h5></li>
-    <li><%="#{program.movie_or_show}"%></li>
-    <li><%=program.summary%></li>
-    <li><%=program.streaming_service%></li><br>
+    <li><b>Title:</b> <%="#{program.title}"%></li>
+    <li><b>Movie or Show:</b> <%="#{program.movie_or_show}"%></li>
+    <li><b>Summary:</b> <%=program.summary%></li>
+    <li><b>Streaming Service:</b> <%=program.streaming_service%></li>
+    <li><b>Added By:</b> <%=program.user.username%></li><br>
     <%end%>
 
 <style>
