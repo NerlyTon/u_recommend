@@ -14,25 +14,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/u_recommend.css" />
   </head>
-  <body>
-    <div class="wrapper">
-    <nav class="menu">
-    <% if logged_in? %>
-    <ul>
-      <li><a href="/programs">Your List</a></li>
-      <li><a href="/programs/new">Add New Program</a></li>
-      <li><a href="/logout">Log Out</a></li><br><br>
-
-      </form>
-    <% else %>
-      <li><a href="/signup">Sign Up</a> to create your list!</li> 
-      <li><a href="/login">Log In</a> to view/edit your list!</li><br><br>
-    </ul>
-    <% end %>
-  </nav>
-  <body>
+<body>
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
@@ -69,7 +53,7 @@
     
       <section class="jumbotron text-center">
         <div class="container">
-          <h1>URecommend</h1>
+          <h1>Album example</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
           <p>
             <a href="#" class="btn btn-primary my-2">Main call to action</a>
@@ -225,15 +209,16 @@
     
     </main>
     
- 
-    
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
+      </div>
+    </footer>
 
-      <%= yield %>
-
-      <footer class="branding">
-        <small>&copy; 2020 <strong>URecommend</strong></small>
-      </footer>
-    </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
