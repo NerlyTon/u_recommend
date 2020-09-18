@@ -1,3 +1,4 @@
+<div class="sign up section">
 <h1>Sign up Below!</h1><br>
 <% if @error %>
 <% @error.each do |e| %>
@@ -12,14 +13,22 @@
   <label for="password">Password:</label>
   <input type="password" name="password" id="password" placeholder="Password" required><br><br>
   <input type="submit" value="Create Account">
-</form>
+</form><br><br><br>
 
 <li><a href="/">Back</a></li>
+</div>
 
 <style>
     p {
         color: red;
+        text-align: center;
       
     }
+
+    h1, form, li {
+        text-align: center;
+    }
+
+  
 
 </style>
