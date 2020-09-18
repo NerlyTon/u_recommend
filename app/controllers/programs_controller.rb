@@ -9,11 +9,11 @@ class ProgramsController < ApplicationController
     get '/programs/new' do
         erb :"/programs/new"
     end
+
     
     get '/programs/:id' do
         @program = Program.find_by_id(params[:id])
         if current_user && @program.user_id == current_user.id
-            
             erb :"/programs/show_id"
         else
             redirect '/'
@@ -56,6 +56,9 @@ class ProgramsController < ApplicationController
         @program.destroy
         redirect '/programs'
     end
+
+   
+
 
 
 end
