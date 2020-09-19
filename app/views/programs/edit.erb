@@ -1,4 +1,4 @@
-<h1>Edit Program</h1>
+<h1>Edit Program</h1><br><br>
 <form method="post" action="/programs/<%=@program.id%>">
 <input id="hidden" type="hidden" name="_method" value="patch">
 Title:<input type="text" value="<%=@program.title%>" name="title"><br><br>
@@ -9,3 +9,9 @@ Streaming Service:<input type="text" value="<%=@program.streaming_service%>" nam
 </form><br><br><br>
 
 <li><a href="/programs">Back</a></li>
+
+<style>
+    h1, form, li {
+        text-align: center;
+      }
+    </style>

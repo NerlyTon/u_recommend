@@ -1,18 +1,41 @@
-<h1><%=@program.title%></h1>
-<h4>Movie or Show:</h4><%=@program.movie_or_show%><br><br>
-<h4>Summary</h4><%=@program.summary%><br><br>
-<h4>Streaming Service</h4><%=@program.streaming_service%><br><br><br>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
 
-<form method="get" action="/programs/<%=@program.id%>/edit">
-<input type="submit" value="edit"> 
-</form> <br>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    
+                    <div class="card-body">
+                        <p class="card-text">
+                            <h3><b>Title:</b> <%="#{@program.title}"%></h3>
+                            <li><b>Movie or Show:</b> <%="#{@program.movie_or_show}"%></li>
+                            <li><b>Summary:</b> <%=@program.summary%></li>
+                            <li><b>Streaming Service:</b> <%=@program.streaming_service%></li><br>
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <form method="get" action="/programs/<%=@program.id%>/edit">
+                            <input type="submit" value="edit"> 
+                            </form> <br>
+                            <form method="post" action="/programs/<%=@program.id%>">
+                            <input type="hidden" name="_method" value="delete">
+                            <input type="submit" value="delete">
+                            </form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
 
-<form method="post" action="/programs/<%=@program.id%>">
-<input type="hidden" name="_method" value="delete">
-<input type="submit" value="delete">
-</form><br><br><br>
+        </div>
+    </div>
+</div>
 
 <li><a href="/programs">Back</a></li>
+
+<style>
+    h3 {
+        text-align: center;
+      }
+</style>
 
 
 
