@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    #shows the login form
+    #renders the login form
     get "/login" do
         erb :"/users/login"
     end
