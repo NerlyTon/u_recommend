@@ -17,7 +17,10 @@
       <% if logged_in? %>
         <a href="/programs" class="btn btn-primary my-2">Your List</a>
         <a href="/programs/new" class="btn btn-secondary my-2">Add New Program</a>
-        <a href="/logout" class="btn btn-secondary my-2">Log Out</a>
+        <form method="post" action="/logout">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" class="btn btn-secondary my-2" value="Log Out">
+          </form>
       <% else %>
         <a href="/signup" class="btn btn-primary my-2">Sign Up</a>
         <a href="/login" class="btn btn-secondary my-2">Log In</a>

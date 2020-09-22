@@ -33,16 +33,14 @@ class UsersController < ApplicationController
             flash[:message] = "Welcome back #{user.name}"
             redirect '/'
           else
-            
             redirect '/login'
           end
         else
-            puts "Please try again"
           redirect '/login'
         end
     end
 
-    get '/logout' do
+    delete '/logout' do
         session.clear
         redirect '/'
     end

@@ -2,12 +2,20 @@ class ProgramsController < ApplicationController
 
 
     get '/programs' do
-        @programs = current_user.programs
-        erb :"/programs/show" 
+        if current_user
+            @programs = current_user.programs
+            erb :"/programs/show"
+        else
+            redirect '/'
+        end 
     end
     
     get '/programs/new' do
-        erb :"/programs/new"
+        if current_user
+            erb :"/programs/new"
+        else
+            redirect '/'
+        end
     end
 
     
