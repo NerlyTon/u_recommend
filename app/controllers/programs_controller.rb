@@ -35,7 +35,7 @@ class ProgramsController < ApplicationController
     end
 #receive params from the new program form
     post '/programs' do
-        program = Program.create(title: params[:title], movie_or_show: params[:movie_or_show], summary: params[:summary], streaming_service: params[:streaming_service], user_id: current_user.id)
+        program = Program.create(title: params[:title], movie_or_show: params[:movie_or_show], summary: params[:summary], streaming_service: params[:streaming_service], image_url: params[:image_url], user_id: current_user.id)
         redirect '/programs'
     end
 
@@ -48,6 +48,7 @@ class ProgramsController < ApplicationController
         @program.movie_or_show = params[:movie_or_show]
         @program.summary = params[:summary]
         @program.streaming_service = params[:streaming_service]
+        @program.image_url = params[:image_url]
         @program.save
         # program = Program.find_by(id:params[:id])
         # if current_user.id = program.user_id
@@ -65,9 +66,7 @@ class ProgramsController < ApplicationController
         redirect '/programs'
     end
 
-   
-
-
+    
 
 end
     
